@@ -1,0 +1,27 @@
+
+
+      SUBGRAPH(test)
+        DATUM(dummy);
+        INPUT(dummy);
+        CONST(x1,1);
+        CONST(x2,2);
+        CONST(x3,3);
+        CONST(x4,4);
+        OUTPUT(x1);
+        OUTPUT(x2);
+        OUTPUT(x3);
+        OUTPUT(x4);
+
+
+      SUBGRAPH(main)
+        DATUM(a);
+        DATUM(b);
+        DATUM(c);
+        DATUM(d);
+        CONST(dummy,1);
+        
+        EXPAND(test,MAP_IN(dummy,dummy);MAP_OUT(x1,a);MAP_OUT(x2,b);MAP_OUT(x3,c);MAP_OUT(x4,d););
+        
+
+        DATUM(end);
+        TERMINATE(end,a,b,c,d);

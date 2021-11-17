@@ -356,7 +356,7 @@ int generate_scope_ir(struct ast_node *ast)
 
 				found_datum->destination->destination = (char *)malloc(strlen(list->id)+1+5);
 				strcpy(found_datum->destination->destination,"arg0_");
-				strcat(found_datum->destination->destination,list->id);
+				strcat(found_datum->destination->destination,dest);
 				list = list->next;
 			}
 		}
